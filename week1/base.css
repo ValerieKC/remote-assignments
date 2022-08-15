@@ -144,7 +144,7 @@ button:hover{
 ==================================== */
 @media (min-width: 1201px) {
 
-	html{
+	.container{
 		max-width:1200px;
 	}
 

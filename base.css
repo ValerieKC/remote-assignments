@@ -4,6 +4,7 @@
 
 * {
 	box-sizing: border-box;
+	margin:0 auto;
 }
 
 body {
@@ -142,6 +143,10 @@ button:hover{
   Media Queries
 ==================================== */
 @media (min-width: 1201px) {
+
+	html{
+		max-width:1200px;
+	}
 
 	.main-header,
 	.main-nav,

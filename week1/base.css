@@ -1,0 +1,263 @@
+/* ================================= 
+  Base Element Styles
+==================================== */
+
+* {
+	box-sizing: border-box;
+	margin:0 auto;
+}
+
+body {
+	font-family: 'Varela Round', sans-serif;
+	line-height: 1.6;
+	color: #3a3a3a;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+p {
+	font-size: .95em;
+	margin-bottom: 1.8em;
+}
+
+h2,
+h3,
+a {
+	color: #093a58;
+}
+
+h2,
+h3 {
+	margin-top: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+button {
+	background-color: #000066;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 16px;
+	border-radius: 12px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 0 auto;
+	margin-top: 1em;
+	cursor: pointer;
+}
+
+button:hover{
+	background-color:#F0F4FF;
+	color: #000066;
+}
+
+/* ================================= 
+  Base Layout Styles
+==================================== */
+
+
+/* ---- Navigation ---- */
+.name {
+	font-size: 1.35em;
+	margin: 0;
+}
+
+.main-nav {
+	margin-top: 5px;
+}
+
+.menu {
+	margin-right: 1em;
+}
+
+.name a,
+.main-nav a {
+	text-align: center;
+	display: block;
+	padding: 10px 15px;
+}
+
+.main-nav a {
+	font-size: .95em;
+	color: #809fff;
+	text-transform: uppercase;
+}
+
+.main-nav a:hover {
+	color: #093a58;
+}
+
+/* ---- Layout Containers ---- */
+
+.main-header {
+	padding-top: .5em;
+	padding-bottom: .5em;
+}
+
+.banner,
+.main-footer {
+	text-align: center;
+}
+
+.banner {
+	color: #fff;
+	background: #072448;
+	padding: 3.2em 0;
+	margin-bottom: 1.5em;
+}
+
+.col {
+	padding-right: 2em;
+	padding-left: 2em;
+	background-color: #BFCFFF;
+}
+
+.Title {
+	text-align: center;
+}
+
+
+/* ---- Page Elements ---- */
+
+.logo {
+	width: 190px;
+}
+
+.headline {
+	margin-bottom: 0;
+}
+
+
+/* ================================= 
+  Media Queries
+==================================== */
+@media (min-width: 1201px) {
+
+	.container{
+		max-width:1200px;
+	}
+
+	.main-header,
+	.main-nav,
+	.row,
+	.menu {
+		display: flex;
+	}
+
+	.main-header {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	.menu {
+		display: none;
+	}
+
+	li {
+		visibility: visible;
+	}
+
+	.row {
+		flex-direction: row;
+		flex-wrap: wrap;
+
+	}
+
+	.col {
+		flex-grow: 1;
+		flex-basis: 48%;
+		margin: 3px;
+	}
+
+
+
+
+}
+
+@media (min-width: 801px) and (max-width: 1200px) {
+	.main-header {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	.main-nav {
+		display: flex;
+	}
+
+	.menu {
+		display: none;
+	}
+
+	.row {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+
+	}
+
+	.col {
+		flex-grow: 1;
+		flex-basis: 48%;
+		margin: 3px;
+	}
+
+}
+
+@media (min-width: 501px) and (max-width: 800px) {
+
+	.main-header {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	li {
+		display: none;
+	}
+
+	.menu {
+		align-self: center;
+	}
+
+	.row {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+
+	}
+
+	.col {
+		flex-grow: 1;
+		flex-basis: 48%;
+		margin: 2px;
+	}
+}
+
+@media (max-width: 500px) {
+
+	.main-header {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	li {
+		display: none;
+	}
+
+
+}

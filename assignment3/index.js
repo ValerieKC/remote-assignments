@@ -23,7 +23,7 @@ router.get('/getData', (req, res) => {
   const number = req.query.number
   if (typeof number === "undefined") {
     res.send("Lack of Parameter")
-  } else if (!parseInt(number, 10)){
+  } else if (!parseInt(number, 10) || parseInt(number, 10)<0){
     res.send("Wrong Parameter")
   }else{
     const result = sum(number)
@@ -32,13 +32,24 @@ router.get('/getData', (req, res) => {
 }  )
 
 
-router.use('/sum.html', (req, res) => {
+router.get('/sum.html', (req, res) => {
+  res.render('sum')
   res.sendFile(path.join(__dirname, 'sum.html'))
 })
 
 router.post('/getData', (req, res) => {
-  res.json(sum(req.body.number))
-})
+  const number = req.query.number
+  if (typeof number === "undefined") {
+    res.send(res.json("Lack of Parameter"))
+  } else if (!parseInt(number, 10) || parseInt(number, 10) < 0) {
+    res.send(res.json("Wrong Parameter"))
+  } else {
+    const result = sum(number)
+    res.send(`${res.json(result) }`)
+  }
+}
+
+)
 
 
 router.listen(3000)

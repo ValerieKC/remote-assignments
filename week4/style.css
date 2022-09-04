@@ -1,0 +1,17 @@
+html,
+body {
+  height:100%;
+}
+
+.product-list {
+  height:100%;
+  display: flex;
+  flex-direction:row;
+  align-items:center;
+}
+
+
+ul{
+    width:30%;
+    height:5em;
+}

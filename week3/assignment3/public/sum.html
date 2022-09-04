@@ -6,13 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sum</title>
-  <link rel="stylesheet" href="/static/stylesheets/style.css">
+  <link rel="stylesheet" href="static/stylesheets/style.css">
 </head>
 
 <body>
   <section>
     <h1>Calculate!</h1>
-      <label>Please fill the blank with positive integer to calculate 1+2+3+...+n</label>
+      <label>Please fill the blank with valid number</label>
     <form action="/index.js">   
         <input class="inputNumber" id="sum" type="text" name="number">     
     </form>
@@ -30,13 +30,11 @@
        const xhr = new XMLHttpRequest()
         xhr.open('POST', '/getData?number=' + input)
         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
-       // xhr.send("number=" + input)
-        xhr.send(input)
+        xhr.send("number=" + input)
         xhr.onload = () => {
           if (xhr.status === 200) {
-            console.log(xhr.responseText)
             let ans = JSON.parse(xhr.responseText)
-            Result.innerHTML = `${ans}`
+            Result.innerHTML = `1+2+...+${input} = ${ans}`
           }
         };
       }
